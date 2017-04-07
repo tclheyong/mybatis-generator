@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Dao 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dao.PubProtocolDao" >
+  <resultMap id="BaseResultMap" type="entity.PubProtocol" >
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="protocol_type" property="protocolType" jdbcType="CHAR" />
+    <result column="protocol_code" property="protocolCode" jdbcType="VARCHAR" />
+    <result column="protocol_title" property="protocolTitle" jdbcType="VARCHAR" />
+    <result column="protocol_content" property="protocolContent" jdbcType="VARCHAR" />
+    <result column="protocol_state" property="protocolState" jdbcType="CHAR" />
+    <result column="create_time" property="createTime" jdbcType="VARCHAR" />
+  </resultMap>
+</mapper>

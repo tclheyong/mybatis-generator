@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+
+  <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+  	
+  	<property name="javaFileEncoding" value="UTF-8"/>
+  
+    <property name="beginningDelimiter" value="`"/>
+    <property name="endingDelimiter" value="`"/>
+     
+    
+    <!-- 格式化java代码 -->
+    <property name="javaFormatter" value="define.MyJavaFormater"/>
+    <!-- 格式化XML代码 -->
+    <property name="xmlFormatter" value="define.MyXmlFormater"/>
+    
+    
+    <plugin type="define.MyMapperPlugin">
+      <property name="mappers" value="com.icitic.seed.persistence.mapper.BaseMapper"/>
+    </plugin>
+
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                    connectionURL="jdbc:mysql://121.14.142.190:3306/jd2.0"
+                    userId="artery"
+                    password="artery">
+    </jdbcConnection>
+    
+
+    <javaModelGenerator targetPackage="entity" targetProject="${targetJavaProject}"/>
+
+    <sqlMapGenerator targetPackage="mapper"  targetProject="${targetResourcesProject}"/>
+
+    <javaClientGenerator targetPackage="dao" targetProject="${targetJavaProject}" type="XMLMAPPER" />
+
+    <table tableName="%" >
+      <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+    </table>
+  </context>
+</generatorConfiguration>
